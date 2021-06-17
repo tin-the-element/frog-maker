@@ -1,0 +1,32 @@
+#selector
+    margin-left: 30px
+
+
+#type_chooser
+    @extend %container
+    height: 100px
+    width: 400px
+
+.selector_img
+    max-width: $boxes-size
+    max-height: $boxes-size
+    
+    
+
+#item_chooser
+    @extend %container
+    height: 500px
+    width: 400px
+    display: grid
+    grid-template-columns: repeat(3, 1fr)
+    grid-template-rows: repeat(4, 1fr)
+    
+
+    div
+        width: $boxes-size
+        height: $boxes-size
+        background: white
+        border: 1px solid black
+    
+    div:hover
+        opacity: 70%
