@@ -6,6 +6,21 @@
     @extend %container
     height: 100px
     width: 400px
+    display: flex
+    flex-direction: row
+
+    div
+        width: $types-size
+        height: $types-size
+        background: white
+        border: 1px solid black
+
+    div:hover
+        opacity: 70%
+
+.type_img
+    max-width: $types-size
+    max-height: $types-size
 
 .selector_img
     max-width: $boxes-size

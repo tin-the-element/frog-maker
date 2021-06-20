@@ -22,14 +22,19 @@
 let froggy = {name: 'froggy', svgLink: "assets/Froggy.svg", x: 60, y: 140, height: 300};
 let party_hat = {name: 'party_hat', svgLink: "assets/hat.svg", x: 150, y: 0, height: 100};
 let santa_hat = {name: 'santa_hat', svgLink: "assets/Festive-Red-Hat.svg", x: 160, y: 110, height: 100};
+let jester_hat = {name: 'jester_hat', svgLink: "assets/Jester-Hat-Simple-Icon.svg", x: 160, y: 110, height: 100};
+let top_hat = {name: 'top_hat', svgLink: "assets/Top_Hat.svg", x: 160, y: 110, height: 100};
+
 
 let frog_array = [froggy, party_hat]
 
 const __BASEFROG_INDEX__ = 0;
 const __HAT_INDEX__ = 1;
 
+const TYPES = [froggy, party_hat]
+
 const BASE_FROG = [froggy]
-const HAT_ARRAY = [party_hat, santa_hat];
+const HAT_ARRAY = [party_hat, santa_hat, jester_hat,  top_hat];
 
 
 // Interfaces and classes
@@ -63,16 +68,21 @@ function clearCanvas() {
 
 function draw(asset: AssetSvg, index: number) {
     frog_array[index] = asset;
+    console.log(frog_array);
     clearCanvas()
     for (var i of frog_array) {
         drawElement(i)
     }
 }
 
+
 // Functions to show the choice of things
-function populate(page_number: number) {
+function populateItems(page_number: number) {
     let populate_array : Array<AssetSvg>;
     switch (page_number) {
+        case 0:
+            populate_array = BASE_FROG
+            break
         case 1:
             populate_array = HAT_ARRAY
     }
@@ -80,8 +90,19 @@ function populate(page_number: number) {
     let items_chooser = document.getElementById("item_chooser");
     items_chooser.innerHTML = ""
     for (var i of populate_array) {
-        items_chooser.innerHTML += '<div onclick="draw(' + i.name + ', __HAT_INDEX__)"><img class="selector_img" src="' + i.svgLink + '" /></div>'    
+        items_chooser.innerHTML += '<div onclick="draw(' + i.name + ', ' + page_number + ')"><img class="selector_img" src="' + i.svgLink + '" /></div>'    
     }
 }
 
-populate(1);
+function populateTypes() {
+    let populate_array : Array<AssetSvg> = TYPES;
+
+    let type_chooser = document.getElementById("type_chooser");
+    type_chooser.innerHTML = ""
+    for (var i in populate_array) {
+        type_chooser.innerHTML += '<div onclick="populateItems(' + i + ')"><img class="type_img" src="' + populate_array[i] .svgLink + '" /></div>'    
+    }
+}
+
+populateTypes()
+populateItems(0);

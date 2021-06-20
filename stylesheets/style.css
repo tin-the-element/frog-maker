@@ -30,6 +30,22 @@ footer {
 #type_chooser {
   height: 100px;
   width: 400px;
+  display: flex;
+  flex-direction: row;
+}
+#type_chooser div {
+  width: 100px;
+  height: 100px;
+  background: white;
+  border: 1px solid black;
+}
+#type_chooser div:hover {
+  opacity: 70%;
+}
+
+.type_img {
+  max-width: 100px;
+  max-height: 100px;
 }
 
 .selector_img {
