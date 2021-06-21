@@ -16,10 +16,10 @@
 // 
 // Global variables and constants (storing data)
 var froggy = { name: 'froggy', svgLink: "assets/Froggy.svg", x: 60, y: 140, height: 300 };
-var party_hat = { name: 'party_hat', svgLink: "assets/hat.svg", x: 150, y: 0, height: 100 };
-var santa_hat = { name: 'santa_hat', svgLink: "assets/Festive-Red-Hat.svg", x: 160, y: 110, height: 100 };
-var jester_hat = { name: 'jester_hat', svgLink: "assets/Jester-Hat-Simple-Icon.svg", x: 160, y: 110, height: 100 };
-var top_hat = { name: 'top_hat', svgLink: "assets/Top_Hat.svg", x: 160, y: 110, height: 100 };
+var party_hat = { name: 'party_hat', svgLink: "assets/hats/hat.svg", x: 150, y: 0, height: 100 };
+var santa_hat = { name: 'santa_hat', svgLink: "assets/hats/santa_hat.svg", x: 160, y: 110, height: 100 };
+var jester_hat = { name: 'jester_hat', svgLink: "assets/hats/jester_hat.svg", x: 160, y: 110, height: 100 };
+var top_hat = { name: 'top_hat', svgLink: "assets/hats/top_hat.svg", x: 160, y: 110, height: 100 };
 var frog_array = [froggy, party_hat];
 var __BASEFROG_INDEX__ = 0;
 var __HAT_INDEX__ = 1;

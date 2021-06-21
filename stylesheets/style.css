@@ -6,8 +6,26 @@
   border-radius: 10px;
 }
 
-footer {
-  background: #f37176;
+#type_chooser, #footer, #header {
+  display: flex;
+  flex-direction: row;
+}
+
+#header {
+  justify-content: center;
+  width: 100%;
+  height: 4rem;
+  margin-bottom: 10px;
+  background-color: white;
+}
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;
+  justify-content: center;
+  background-color: white;
 }
 
 .flexbox {
@@ -30,8 +48,6 @@ footer {
 #type_chooser {
   height: 100px;
   width: 400px;
-  display: flex;
-  flex-direction: row;
 }
 #type_chooser div {
   width: 100px;
@@ -73,6 +89,7 @@ footer {
 body {
   background: #f37176;
   color: #84ddff;
+  margin: 0;
 }
 
 /*# sourceMappingURL=style.css.map */
